@@ -1,39 +1,37 @@
-Imports System.Text.RegularExpressions
-
 Public Class Form1
 
-  Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-     Dim number As New Regex("\d{10}")
+        Dim number As New Regex("\d{10}")
 
-     If number.IsMatch(TextBox1.Text) Then
+        If number.IsMatch(TextBox1.Text) Then
 
-          ErrorProvider1.SetError(TextBox1, "")
+            ErrorProvider1.SetError(TextBox1, "")
 
-          MsgBox("Valid Phone Number")
+            MsgBox("Valid Phone Number")
 
-     Else
+        Else
 
-    ErrorProvider1.SetError(TextBox1, "Invalid Phone Number")
+            ErrorProvider1.SetError(TextBox1, "Invalid Phone Number")
 
-    End If
+        End If
 
-    Dim regex As Regex = New Regex("^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$")
+        Dim regex As Regex = New Regex("^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$")
 
-    Dim isValid As Boolean = regex.IsMatch(TextBox2.Text.Trim)
+        Dim isValid As Boolean = regex.IsMatch(TextBox2.Text.Trim)
 
-        
+        If Not isValid Then
 
-If Not isValid Then ErrorProvider1.SetError(TextBox2, "Invalid E-mail ID")
+            ErrorProvider1.SetError(TextBox2, "Invalid E-mail ID")
 
-   Else
+        Else
 
-    ErrorProvider1.SetError(TextBox2, "")
+        ErrorProvider1.SetError(TextBox2, "")
 
-    MsgBox("Valid E-Mail ID")
+        MsgBox("Valid E-Mail ID")
 
-  End If
+        End If
 
- End Sub
+    End Sub
 
 End Class
