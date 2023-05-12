@@ -1,0 +1,19 @@
+Module Module1
+ Sub Main()
+ Dim i, j As Integer
+ i = 2
+ While (i <= 100)
+ j = 2
+ While (j < i)
+ If i Mod j = 0 Then
+ Exit While
+ ElseIf i = j + 1 Then
+ Console.WriteLine(i)
+ End If
+ j += 1
+ End While
+ i += 1
+ End While
+ Console.ReadLine()
+ End Sub
+End Module
