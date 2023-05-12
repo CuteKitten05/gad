@@ -1,0 +1,25 @@
+public Class Form1
+
+ Private Sub Form1_Load(sender As Object, e As
+
+EventArgs) Handles MyBase.Load
+
+ ComboBox1.Items.Add("VP") 
+
+ ComboBox1.Items.Add("VIT") 
+
+ ComboBox1.Items.Add("VSIT") 
+
+ End Sub
+
+Private Sub ComboBox1_SelectedIndexChanged(sender As
+
+Object, e As EventArgs) Handles
+
+ComboBox1.SelectedIndexChanged
+
+ MsgBox(ComboBox1.SelectedItem.ToString)
+
+ End Sub
+
+End class
